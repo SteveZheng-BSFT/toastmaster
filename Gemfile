@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 #bootstrap and sass
 gem 'bootstrap-sass'
+#encrypt
+gem 'bcrypt'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
