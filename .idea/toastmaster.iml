@@ -171,6 +171,7 @@
     <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.0.7, ruby-2.2.2-p95) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.18.3, ruby-2.2.2-p95) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.1, ruby-2.2.2-p95) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="puma (v2.13.4, ruby-2.2.2-p95) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.6.4, ruby-2.2.2-p95) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.3, ruby-2.2.2-p95) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.2.3, ruby-2.2.2-p95) [gem]" level="application" />
