@@ -18,6 +18,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 #encrypt
 gem 'bcrypt'
+#fake a bunch of usrs
+gem 'faker'
+#provide paginate function
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

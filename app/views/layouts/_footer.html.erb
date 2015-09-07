@@ -11,7 +11,9 @@
       <li><%= link_to 'About',   about_path %></li>
       <li><%= link_to 'Contact', contact_path %></li>
       <li><a href="http://www.cs.uml.edu/~zzheng/">News</a></li>
-      <li><a href="http://nltmc.toastmastersclubs.org" class="btn btn-info btn-xs" role="button">Switch to Old Version</a></li>
+      <li><%= link_to 'Swith to old version', 'http://nltmc.toastmastersclubs.org',
+                      class: 'btn btn-info btn-xs', role: 'button',
+                      data: {confirm: "Wouldn't you really consider to use the old website, would you?"} %></li>
     </ul>
   </nav>
 </footer>
