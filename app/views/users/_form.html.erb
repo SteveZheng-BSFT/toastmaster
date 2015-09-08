@@ -10,7 +10,7 @@
     <%= f.label :phone, 'Phone Number' %>
     <%= f.telephone_field :phone, class: 'form-control' %>
 
-    <%= f.label :password %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
+    <%= f.label :password %> <span class="must_fill"><%= yield(:must_fill_star) %></span><!--TODO: show password-->
     <%= f.password_field :password, class: 'form-control' %>
 
     <%= f.label :password_confirmation, 'Confirmation' %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
