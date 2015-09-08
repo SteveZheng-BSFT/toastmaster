@@ -1,33 +1,17 @@
 <% provide(:title, 'Edit Profile') %>
+<% provide(:button_text, 'Save changes') %>
+<% provide(:must_fill_star, '') %>
 
 <h1>Update Profile</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages' %>
-
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-
-        <%= f.label :phone, 'Phone Number' %>
-        <%= f.telephone_field :phone, class: 'form-control' %>
-
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-
-        <%= f.label :password_confirmation, 'Confirmation' %>
-        <%= f.password_field :password_1confirmation, class: 'form-control' %>
-
-        <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
-
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails" target="_blank">change avatar</a>
     </div>
+
+    <h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Leave the form alone has no change</h2>
+    <%= render 'form' %>
   </div>
 </div>

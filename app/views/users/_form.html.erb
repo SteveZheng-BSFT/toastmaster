@@ -1,0 +1,20 @@
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: @user %>
+
+    <%= f.label :name %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.label :email %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <%= f.label :phone, 'Phone Number' %>
+    <%= f.telephone_field :phone, class: 'form-control' %>
+
+    <%= f.label :password %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.label :password_confirmation, 'Confirmation' %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
+    <%= f.password_field :password_1confirmation, class: 'form-control' %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

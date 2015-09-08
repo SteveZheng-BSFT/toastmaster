@@ -27,12 +27,13 @@ aside {
 }
 
 .gravatar {
-  float: left;
+  //float: left;
   margin-right: 10px;
+  vertical-align: top;
 }
 
 .gravatar_edit {
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /* forms */
@@ -65,6 +66,10 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.must_fill {
+  color: red;
 }
 
 /* all users index */
