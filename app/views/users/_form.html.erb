@@ -10,7 +10,8 @@
     <%= f.label :phone, 'Phone Number' %>
     <%= f.telephone_field :phone, class: 'form-control' %>
 
-    <%= f.label :password %> <span class="must_fill"><%= yield(:must_fill_star) %></span><!--TODO: show password-->
+    <%= f.label :password %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
+    <span class="see_or_not"><span class="glyphicon glyphicon-eye-open"></span></span>
     <%= f.password_field :password, class: 'form-control' %>
 
     <%= f.label :password_confirmation, 'Confirmation' %> <span class="must_fill"><%= yield(:must_fill_star) %></span>
@@ -18,3 +19,11 @@
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
+
+<script>
+    $('.see_or_not').hover(function () {
+        $('#user_password').attr('type', 'text');
+    }, function () {
+        $('#user_password').attr('type', 'password');
+    });
+</script>

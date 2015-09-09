@@ -13,5 +13,9 @@
 
     <h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Leave the form alone has no change</h2>
     <%= render 'form' %>
+
+    <br><hr>
+    <%= link_to 'CANCEL MY ACCOUNT', @user, method: :delete,
+                data: {confirm: 'This is an irreversible operation and all your data will be delete, are you sure?'} %>
   </div>
 </div>

@@ -1,12 +1,32 @@
 <li>
   <%= gravatar_for user, size:50 %>
-  <%= link_to user.name, user %>
-  <% if (current_user.admin != 0) && !current_user?(user) %>
-      <% if current_user.admin == 1 %>
-          <span>|</span>
-          <%= link_to 'GRANT', user, data: {confirm: 'Make it officer?'} %><!--TODO make officer-->
-      <% end %>
-      <span>|</span>
-      <%= link_to 'DELETE', user, method: :delete, data: {confirm: 'This is an irreversible operation, are you sure?'} %>
-  <% end %>
+  <%= link_to user.name, user %><br>
+  <%= user.admin_description %>
+
+  <span class="admin_choices">
+    <% if (current_user.admin >= 1) && !current_user?(user) %>
+        <% if current_user.admin == 1 %>
+            <% if (user.admin < 1) %>
+                <%= link_to 'Accredit officer', edit_set_admin_url(user), data: {confirm: 'Make it officer?'} %>
+                <span>|</span>
+            <% else %>
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <%= link_to 'Cancel officer', edit_set_admin_url(user), data: {confirm: 'Cancel officer?'} %>
+                <span>|</span>
+            <% end %>
+        <% end %>
+
+        <% if (user.admin == 0) %>
+            <%= link_to 'Approve member', edit_set_member_url(user) %>
+            <span>|</span>
+        <% elsif (user.admin == -1) %>
+            <span class="glyphicon glyphicon-ban-circle"></span>
+            <%= link_to 'Cancel member', edit_set_member_url(user) %>
+            <span>|</span>
+        <% end %>
+
+        <%= link_to 'DELETE', user, method: :delete, data: {confirm: 'This is an irreversible operation, are you sure?'} %>
+    <% end %>
+  </span>
+
 </li>

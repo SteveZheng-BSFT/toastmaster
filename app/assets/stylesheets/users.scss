@@ -27,9 +27,8 @@ aside {
 }
 
 .gravatar {
-  //float: left;
+  float: left;
   margin-right: 10px;
-  vertical-align: top;
 }
 
 .gravatar_edit {
@@ -81,4 +80,8 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid gainsboro;
   }
+}
+
+.admin_choices {
+  float: right;
 }
