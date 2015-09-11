@@ -23,6 +23,12 @@ gem 'faker'
 #provide paginate function
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+#image uploader
+gem 'carrierwave'
+#image resizing
+gem 'mini_magick'
+#cloud storage gem
+gem 'fog'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
