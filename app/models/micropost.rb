@@ -9,8 +9,8 @@ class Micropost < ActiveRecord::Base
 
   private
     def picture_size
-      if picture.size > 5.megabytes
-        errors.add(:picture, 'picture should be less than 5MB')
+      if picture.size > 8.megabytes
+        errors.add(:picture, 'picture should be less than 8MB')
       end
     end
 end
