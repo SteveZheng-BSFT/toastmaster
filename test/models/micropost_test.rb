@@ -15,9 +15,9 @@ class MicropostTest < ActiveSupport::TestCase
     assert_not @micropost.valid?
   end
 
-  test 'content should be present' do
+  test 'content can be blank' do
     @micropost.content = ''
-    assert_not @micropost.valid?
+    assert @micropost.valid?
   end
 
   test 'content should be max 140 characters' do

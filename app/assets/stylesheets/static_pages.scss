@@ -30,3 +30,40 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .long_word_cut {
+    word-wrap: break-word;
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+  }
+
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+    resize: none;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+.user_comments {
+  clear: both;
+}

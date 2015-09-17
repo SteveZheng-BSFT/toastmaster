@@ -8,7 +8,7 @@ class MicropostsController < ApplicationController
       flash[:success] = 'Micropost posted!'
       redirect_to root_url
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = Micropost.paginate(page: params[:page])
       render 'static_pages/home' #just re-render this page without through controller, so have to provide feed_items here
       #if use redirect_to, then no errors report
       #now problem is: paginate make link to micropost controller, not static_pages, but there's no microposts get path TODO

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
   default_scope -> { order(:created_at) }
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save {self.email = email.downcase} #right side self can be omit in Rails

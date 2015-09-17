@@ -1,10 +1,23 @@
+<% provide :photo_size, '80' %>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <%= render 'shared/user_info' %>
+      <%= render 'shared/user_info', object: current_user %>
     </section>
     <section class="micropost_form">
       <%= render 'shared/micropost_form' %>
+    </section>
+
+    <section class="other_link">
+      <a href="#">Meeting Agendas</a><br>
+      <a href="#">Announcements & Club Events</a><br>
+      <a href="#">Resources</a><br>
+      <a href="#">Gallery</a><br>
+      <a href="#">Facebook</a><br>
+      <a href="#">Members' Stories</a><br><br>
+
+      <%= Time.now.strftime "%Y-%m-%d %A" %>
     </section>
   </aside>
   <div class="col-md-8">
