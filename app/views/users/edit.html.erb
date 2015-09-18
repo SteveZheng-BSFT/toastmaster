@@ -11,11 +11,11 @@
       <a href="http://gravatar.com/emails" target="_blank">change avatar</a>
     </div>
 
-    <h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Leave the form alone has no change</h2>
+    <h2 style="clear: left"><br><span class="glyphicon glyphicon-grain" aria-hidden="true"> </span>If you don't want to change a property, just leave the blank alone.</h2>
     <%= render 'form' %>
 
     <br><hr>
     <%= link_to 'CANCEL MY ACCOUNT', @user, method: :delete,
-                data: {confirm: 'This is an irreversible operation and all your data will be delete, are you sure?'} %>
+                data: {confirm: 'This is an irreversible operation and all your data will be delete, are you sure?'}, class: 'btn btn-danger' %>
   </div>
 </div>

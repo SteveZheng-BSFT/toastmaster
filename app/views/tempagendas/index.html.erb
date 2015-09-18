@@ -1,0 +1,15 @@
+<% provide :title, 'All Agendas' %>
+
+<h1>All Agendas</h1>
+
+<div class="float_right">
+  <span class="glyphicon glyphicon-plus-sign"></span> <%= link_to 'Create a new agenda', new_tempagenda_path %>
+</div>
+
+<br><br>
+
+<%= will_paginate %>
+<ul class="new_list">
+<%= render @tempagendas %>
+</ul>
+<%= will_paginate %>

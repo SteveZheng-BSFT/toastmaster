@@ -1,11 +1,11 @@
 <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.label :name %> <span class="red_color"><%= yield(:must_fill_star) %></span>
-    <%= f.text_field :name, class: 'form-control' %>
-
-    <%= f.label :email %> <span class="red_color"><%= yield(:must_fill_star) %></span>
+    <%= f.label :email %> <span class="red_color"><%= yield(:must_fill_star) %></span> <span>(used to log in)</span>
     <%= f.email_field :email, class: 'form-control' %>
+
+    <%= f.label :name %> <span class="red_color"><%= yield(:must_fill_star) %></span> <span>(displayed name)</span>
+    <%= f.text_field :name, class: 'form-control' %>
 
     <%= f.label :phone, 'Phone Number' %>
     <%= f.telephone_field :phone, class: 'form-control' %>

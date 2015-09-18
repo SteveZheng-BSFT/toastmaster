@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :set_members, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
+  resources :tempagendas
   #TODO resources :comments
 
 get 'static_pages/test'

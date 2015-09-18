@@ -3,6 +3,7 @@
 /* universal */
 body {
   padding-top: 90px;
+  word-wrap: break-word;
 }
 
 section {
@@ -67,4 +68,13 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+/* agenda */
+.all_inline {
+  display: inline;
+  width: 30%;
+}
+.float_right {
+  float: right;
 }

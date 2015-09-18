@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912031818) do
+ActiveRecord::Schema.define(version: 20150917233436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,28 @@ ActiveRecord::Schema.define(version: 20150912031818) do
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id", using: :btree
+
+  create_table "tempagendas", force: :cascade do |t|
+    t.string   "welcomer"
+    t.string   "toastmaster"
+    t.string   "wordmaster"
+    t.string   "timer"
+    t.string   "humorist"
+    t.string   "speaker1"
+    t.string   "speaker2"
+    t.string   "speaker3"
+    t.string   "speaker4"
+    t.string   "topicmaster"
+    t.string   "generaleva"
+    t.string   "evaluator1"
+    t.string   "evaluator2"
+    t.string   "evaluator3"
+    t.string   "evaluator4"
+    t.text     "notes"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.date     "for_date",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

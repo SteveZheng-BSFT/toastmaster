@@ -10,8 +10,11 @@
     <!--<div  class="checkbox-inline">-->
       <!--<input type="checkbox">share on wechat/facebook/twitter  &lt;!&ndash;TODO&ndash;&gt;-->
     <!--</div>-->
-
-    <%= f.submit 'Post', class: 'btn btn-primary' %>
+    <% if current_user.admin != 0 %>
+        <%= f.submit 'Post', class: 'btn btn-primary' %>
+    <% else %>
+        <%= f.button 'POST (requires a membership status)', class: 'btn btn-primary', disabled: 'disabled' %>
+    <% end %>
 <% end %>
 
 <script>
