@@ -15,7 +15,7 @@ class TempagendasController < ApplicationController
     @tempagenda = Tempagenda.new(tempagenda_params)
     if @tempagenda.save
       flash[:success] = 'agenda saved!'
-      redirect_to @tempagenda
+      redirect_to edit_tempagenda_path(@tempagenda)
     else
       render 'new'
     end
@@ -23,6 +23,16 @@ class TempagendasController < ApplicationController
 
   def edit
     @tempagenda = Tempagenda.find(params[:id])
+  end
+
+  def update
+    @tempagenda = Tempagenda.find(params[:id])
+    if @tempagenda.update_attributes(tempagenda_params)
+      flash[:success] = 'Agenda updated'
+      render 'edit'
+    else
+      render 'edit'
+    end
   end
 
   private

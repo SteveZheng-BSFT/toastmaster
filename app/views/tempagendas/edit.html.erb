@@ -24,7 +24,7 @@
           <td>
             <b>Welcomer</b><br>
             Welcome all to the Toastmasters International Meeting and introduce Toastmaster.</td>
-          <td><%= f.select(:welcomer, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:welcomer, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>2 minutes</td>
@@ -32,7 +32,7 @@
             <b>Toastmaster of the day</b><br>
             Toastmaster of the Day (TOD) is responsible for emailing and filling missing roles for the meeting. Contact GE, humorist and speakers for BIO/Manual XX/ Project #/Topic/Personal Goals in advance. Optional: add the Theme of meeting at the bottom meeting note. For details of meeting role, see the back of Competent Communicator manual. During the meeting, TOD introduces each role. In the speaking section, TOD asks the evaluator to stand up and announce the speaker's project objectives and speaker's personal goals. Please come to the meeting early and write all meeting role names to the white board and UPDATE meeting agenda on website!
           </td>
-          <td><%= f.select(:toastmaster, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:toastmaster, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -40,7 +40,7 @@
             <b>Wordmaster of the day</b><br>
             Print 2 copies of the word or Idiom of the day: One is put on the top of the lactern for speakers, and another is sticked on the lactern. Don’t concentrate on counting um's and ah's only but give feedback on points of grammar (both good examples and areas for improvement) as such. It is especially important to give advice to members who make mistakes common to Chinese learning English. Such as putting an 'a'; at the end of words and omitting prepositions or verbs; use correct 'He' and 'She', etc.
           </td>
-          <td><%= f.select(:wordmaster, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:wordmaster, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>2 minutes</td>
@@ -48,7 +48,7 @@
             <b>Timer</b><br>
             Explain timer role and request the speaker to pay attention to your timer flags: 6 min speech: green[5min], yellow[6min], red[7min], stop[7min 30sec]. Topic speech: green[1 min], yellow[1.5 min], red[2 min], stop[2min 30sec]. Elevator speech: green[2min], yellow[2.5min], red [3min], stop[3min 30sec]. Comment on the efficiency of the use of time for all parts of the meeting, rather than just the timing for those with roles – to give feedback on the time management of the whole meeting.
           </td>
-          <td><%= f.select(:timer, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:timer, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -56,7 +56,7 @@
             <b>Humorist</b><br>
             Start the meeting on a light-hearted note. See http://toastmasters.wikia.com/wiki/Jokemaster
           </td>
-          <td><%= f.select(:humorist, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:humorist, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>5~7 minutes</td>
@@ -64,7 +64,7 @@
             <b>Speaker 1</b><br>
             Deliver first prepared speech.
           </td>
-          <td><%= f.select(:speaker1, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:speaker1, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>5~7 minutes</td>
@@ -72,7 +72,7 @@
             <b>Speaker 2</b><br>
             Deliver second prepared speech.
           </td>
-          <td><%= f.select(:speaker2, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:speaker2, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>5~7 minutes</td>
@@ -80,7 +80,7 @@
             <b>Speaker 3</b><br>
             Deliver third prepared speech.
           </td>
-          <td><%= f.select(:speaker3, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:speaker3, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>5~7 minutes</td>
@@ -88,14 +88,14 @@
             <b>Speaker 4</b><br>
             Deliver third prepared speech.
           </td>
-          <td><%= f.select(:speaker4, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:speaker4, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>15 minutes</td>
           <td>
             <b>Topics master</b><br>
             Demonstrate how Toastmasters helps people hone vital skills for impromptu speaking. Up to 8 topic speakers are allowed. Topic Speaker time: 1 - 2 min.</td>
-          <td><%= f.select(:topicmaster, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:topicmaster, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -103,7 +103,7 @@
             <b>General Evaluator</b><br>
             Introduce evaluator, Grammarian, Timer and evaluate the evaluators and the meeting in general. Contact evaluator, Grammarian and Timer in advance. Provide constructive feedback (to include areas of improvement) about the entire meeting. For details of meeting role, see the back of Competent Communicator manual.
           </td>
-          <td><%= f.select(:generaleva, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:generaleva, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -111,7 +111,7 @@
             <b>Evaluator 1</b><br>
             Evaluate first speech.
           </td>
-          <td><%= f.select(:evaluator1, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:evaluator1, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -119,7 +119,7 @@
             <b>Evaluator 2</b><br>
             Evaluate second speech.
           </td>
-          <td><%= f.select(:evaluator2, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:evaluator2, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -127,7 +127,7 @@
             <b>Evaluator 3</b><br>
             Evaluate third speech.
           </td>
-          <td><%= f.select(:evaluator3, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:evaluator3, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
@@ -135,7 +135,7 @@
             <b>Evaluator 4</b><br>
             Evaluate third speech.
           </td>
-          <td><%= f.select(:evaluator4, User.all.collect {|user| [user.name, user.id]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:evaluator4, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>
