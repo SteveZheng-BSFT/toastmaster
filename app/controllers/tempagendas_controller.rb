@@ -1,4 +1,6 @@
 class TempagendasController < ApplicationController
+  before_action :logged_in_user
+
   def index
     @tempagendas = Tempagenda.paginate(page: params[:page])
   end
