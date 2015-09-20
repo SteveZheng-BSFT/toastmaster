@@ -1,5 +1,6 @@
 
 <li>
+  <span class="glyphicon glyphicon-tag"></span>
   <%= link_to(tempagenda.for_date, edit_tempagenda_path(tempagenda.id)) if current_user.admin > 0 %>
   <%= link_to(tempagenda.for_date, tempagenda_path(tempagenda.id)) if current_user.admin < 1 %>
 </li>
