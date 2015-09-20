@@ -3,7 +3,7 @@
   <%= render 'shared/user_info', object: user %>
 
   <span class="admin_choices">
-    <% if (current_user.admin >= 1) && !current_user?(user) %>
+    <% if (current_user.admin >= 1) && !current_user?(user) && (user.admin != 1) %>
         <% if current_user.admin == 1 %>
             <% if (user.admin < 1) %>
                 <%= link_to 'Accredit officer', edit_set_admin_url(user), data: {confirm: 'Make it officer?'} %>
