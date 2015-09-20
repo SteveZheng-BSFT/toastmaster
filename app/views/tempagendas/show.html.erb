@@ -79,22 +79,29 @@
           </td>
           <td><%= @tempagenda.speaker2 %></td>
         </tr>
+
+        <% if !(s = @tempagenda.speaker3).blank? %>
         <tr>
           <td>5~7 minutes</td>
           <td>
             <b>Speaker 3</b><br>
             Deliver third prepared speech.
           </td>
-          <td><%= @tempagenda.speaker3 %></td>
+          <td><%= s %></td>
         </tr>
+        <% end %>
+
+        <% if !(s = @tempagenda.speaker4).blank? %>
         <tr>
           <td>5~7 minutes</td>
           <td>
             <b>Speaker 4</b><br>
             Deliver forth prepared speech.
           </td>
-          <td><%= @tempagenda.speaker4 %></td>
+          <td><%= s %></td>
         </tr>
+        <% end %>
+
         <tr>
           <td>15 minutes</td>
           <td>
@@ -127,22 +134,29 @@
           </td>
           <td><%= @tempagenda.evaluator2 %></td>
         </tr>
+
+        <% if !(e = @tempagenda.evaluator3).blank? %>
         <tr>
           <td>3 minutes</td>
           <td>
             <b>Evaluator 3</b><br>
             Evaluate third speech.
           </td>
-          <td><%= @tempagenda.evaluator3 %></td>
+          <td><%= e %></td>
         </tr>
+        <% end %>
+
+        <% if !(e = @tempagenda.evaluator4).blank? %>
         <tr>
           <td>3 minutes</td>
           <td>
             <b>Evaluator 4</b><br>
             Evaluate forth speech.
           </td>
-          <td><%= @tempagenda.evaluator4 %></td>
+          <td><%= e %></td>
         </tr>
+        <% end %>
+
         <tr>
           <td>3 minutes</td>
           <td>
