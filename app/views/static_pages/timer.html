@@ -2,64 +2,65 @@
 <head>
   <title>Timer Tools</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style type="text/css">
+      body {
+          margin: 20px;
+      }
+      #stopwatch {
+          margin: 20px;
+          font-size: 10em;
+          text-align: center;
+      }
+      #time_report {
+          margin: 30px;
+      }
+      #stop_sign {
+          text-align: center;
+          font-size: 10em;
+      }
+      button {
+          margin: 10px 10px 0 0;
+      }
+  </style>
 </head>
 
 <html>
 
 <body onload="startTime()">
-<div id="time_now"></div>
+    <div id="time_now"></div>
 
-<button id="time_start" onclick="time_start()" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-play"></span> Start</button>
-<button id="time_pause" onclick="time_pause()" disabled="disabled" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-pause"></span> Pause</button>
-<button id="time_stop" onclick="time_stop()" disabled="disabled" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-stop"></span> Stop & Record</button>
-<hr>
+    <button id="time_start" onclick="time_start()" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-play"></span> Start</button>
+    <button id="time_pause" name="pause" onclick="time_pause()" disabled="disabled" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-pause"></span> Pause</button>
+    <button id="time_stop" onclick="time_stop()" disabled="disabled" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-stop"></span> Stop & Record</button>
+    <hr>
 
-<span id="show_name"></span><div id="stopwatch">00:00</div><div id="stop_sign"></div>
+    <span id="show_name"></span><div id="stopwatch">00:00</div><div id="stop_sign"></div>
 
-<hr>
-<div id="time_report">
-  Speeches:<hr><ul id="speeches"></ul>
-  Table topics:<hr><ul id="topics"></ul>
-  Evaluations:<hr><ul id="evaluations"></ul>
-</div>
+    <hr>
+    <div id="time_report">
+      Speeches:<hr><ul id="speeches"></ul>
+      Table topics:<hr><ul id="topics"></ul>
+      Evaluations:<hr><ul id="evaluations"></ul>
+    </div>
 </body>
 </html>
 
-<style type="text/css">
-    body {
-        margin: 20px;
-    }
-    #stopwatch {
-        margin: 20px;
-        font-size: 8em;
-        text-align: center;
-    }
-    #time_report {
-        margin: 30px;
-    }
-    #stop_sign {
-        text-align: center;
-        font-size: 8em;
-    }
-    button {
-        margin: 10px 10px 0 0;
-    }
-</style>
-
 <script>
     function time_pause() {
-        var button_value = document.getElementById("time_pause").innerHTML;
+        var button_name = document.getElementById("time_pause").getAttribute('name');
 
-        if (button_value == 'Pause') {
+        if (button_name == 'pause') {
             clearInterval(watch);
             clearInterval(s_color);
             clearInterval(r_color);
+            document.getElementById("time_pause").setAttribute('name', 'continue');
             document.getElementById("time_pause").innerHTML = 'Continue';
         }else {
             watch = setInterval(stopwatch, 1000);
             s_color = setInterval(show_color, 1000);
-            r_color = setInterval(random_color, 100);
-            document.getElementById("time_pause").innerHTML = 'Pause';
+
+            document.getElementById("time_pause").setAttribute('name', 'pause');
+            document.getElementById("time_pause").innerHTML = "<span class='glyphicon glyphicon-pause'></span> Pause";
         }
 
     }
@@ -68,7 +69,7 @@
         document.getElementById("time_start").disabled = false;
         document.getElementById("time_stop").disabled = true;
         document.getElementById("time_pause").disabled = true;
-        document.getElementById("time_pause").innerHTML = 'Pause';
+        document.getElementById("time_pause").innerHTML = "<span class=\"glyphicon glyphicon-pause\"></span> Pause";
 
         clearInterval(s_color);
         clearInterval(r_color);
@@ -99,7 +100,7 @@
             document.getElementById("time_stop").disabled = false;
             document.getElementById("time_pause").disabled = false;
             document.getElementById("stop_sign").innerHTML = '';
-            document.getElementById("stopwatch").style.fontSize = '8em';
+            document.getElementById("stopwatch").style.fontSize = '10em';
             document.body.style.background = 'white';
 
             var arr = input.split('&');
@@ -132,7 +133,7 @@
                 clearInterval(r_color);
                 r_color = setInterval(random_color, 100);
                 document.getElementById("stop_sign").innerHTML = 'STOP' + '<span class="glyphicon glyphicon-ban-circle"></span>';
-                document.getElementById("stopwatch").style.fontSize = '2em';
+                document.getElementById("stopwatch").style.fontSize = '4em';
             }
         }else {//max 5 or 7 mins
             if (remaining <= 120 && remaining > 60) {
@@ -144,8 +145,8 @@
             }else if (remaining <= -30) {
                 clearInterval(r_color);
                 r_color = setInterval(random_color, 100);
-                document.getElementById("stop_sign").innerHTML = 'STOP';
-                document.getElementById("stopwatch").style.fontSize = '2em';
+                document.getElementById("stop_sign").innerHTML = 'STOP' + '<span class="glyphicon glyphicon-ban-circle"></span>';
+                document.getElementById("stopwatch").style.fontSize = '4em';
             }
         }
     }
