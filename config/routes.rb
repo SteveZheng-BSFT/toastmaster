@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   resources :tempagendas
   #TODO resources :comments
 
-get 'static_pages/test'
+  get 'static_pages/test'
+  get 'timer' => 'static_pages#timer'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

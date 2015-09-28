@@ -14,4 +14,8 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def timer
+    render layout: false
+  end
 end
