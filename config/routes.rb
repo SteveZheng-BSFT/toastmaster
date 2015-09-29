@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/test'
   get 'timer' => 'static_pages#timer'
+  get 'mobile_timer' => 'static_pages#mobile_timer'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
