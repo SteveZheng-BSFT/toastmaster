@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
   <!-- Include jQuery Mobile stylesheets -->
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <!-- Include the jQuery library -->
@@ -77,19 +77,19 @@
 <!--page stopwatch-->
 <div data-role="page" id="page_watch">
 
-  <div data-role="header" data-position="fixed" data-fullscreen="true" class="add_header_padding">
-    <a href="#myPanel" class="ui-btn ui-corner-all"><span class="glyphicon glyphicon-th-list"></span> Catalog</a>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+    <a href="#myPanel" class="ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-left">Catalog</a>
 
     <h1>Timer</h1>
-    <a href="#page_report" class="ui-btn ui-corner-all" data-transition="slide"><span class="glyphicon glyphicon-cd"></span>
+    <a href="#page_report" class="ui-btn ui-corner-all ui-icon-clock ui-btn-icon-left" data-transition="slide">
       Records</a>
   </div>
 
   <div data-role="panel" id="myPanel">
     <h3>Navigator</h3>
-    <a href="/" rel="external" class="ui-btn left_align ui-corner-all"><span class="glyphicon glyphicon-home"></span>
+    <a href="/" rel="external" class="ui-btn left_align ui-corner-all ui-icon-home ui-btn-icon-left">
       Homepage</a>
-    <a href="#page_help" data-rel="dialog" class="ui-btn left_align ui-corner-all" data-transition="pop"><span class="glyphicon glyphicon-question-sign"></span>
+    <a href="#page_help" data-rel="dialog" class="ui-btn left_align ui-corner-all ui-icon-info ui-btn-icon-left" data-transition="pop">
       Help</a>
   </div>
 
@@ -105,14 +105,11 @@
 
     <div data-role="controlgroup" data-type="horizontal">
 
-      <button id="time_start" onclick="time_start()" class="ui-btn add_btn_padding thick_border"><span
-      class="glyphicon glyphicon-play"></span> Start
+      <button id="time_start" onclick="time_start()" class="ui-btn add_btn_padding thick_border">Start
       </button>
-      <button id="time_pause" name="pause" onclick="time_pause()" disabled="disabled" class="ui-btn add_btn_padding thick_border"><span
-      class="glyphicon glyphicon-pause"></span> Pause
+      <button id="time_pause" name="pause" onclick="time_pause()" disabled="disabled" class="ui-btn add_btn_padding thick_border">Pause
       </button>
-      <button id="time_stop" onclick="time_stop()" disabled="disabled" class="ui-btn add_btn_padding thick_border"><span
-      class="glyphicon glyphicon-stop"></span> Stop & Record
+      <button id="time_stop" onclick="time_stop()" disabled="disabled" class="ui-btn add_btn_padding thick_border">&blk14; Stop & Record
       </button>
 
     </div>
@@ -142,7 +139,7 @@
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true" class="center_align">
-    <a href="#page_watch" class="ui-btn ui-icon-clock ui-btn-icon-left ui-corner-all" data-transition="slide" data-direction="reverse">Back to Timer</a>
+    <a href="#page_watch" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all" data-transition="slide" data-direction="reverse">Back to Timer</a>
   </div>
 </div>
 
@@ -185,7 +182,7 @@
             s_color = setInterval(show_color, 1000);
 
             document.getElementById("time_pause").setAttribute('name', 'pause');
-            document.getElementById("time_pause").innerHTML = "<span class='glyphicon glyphicon-pause'></span> Pause";
+            document.getElementById("time_pause").innerHTML = "Pause";
         }
 
     }
@@ -194,7 +191,7 @@
         document.getElementById("time_start").disabled = false;
         document.getElementById("time_stop").disabled = true;
         document.getElementById("time_pause").disabled = true;
-        document.getElementById("time_pause").innerHTML = "<span class=\"glyphicon glyphicon-pause\"></span> Pause";
+        document.getElementById("time_pause").innerHTML = "Pause";
 
         clearInterval(s_color);
         clearInterval(r_color);
@@ -259,7 +256,7 @@
             } else if (remaining <= -30) {
                 clearInterval(r_color);
                 r_color = setInterval(random_color, 100);
-                document.getElementById("stop_sign").innerHTML = 'STOP' + '<span class="glyphicon glyphicon-ban-circle"></span>';
+                document.getElementById("stop_sign").innerHTML = 'STOP';
                 document.getElementById("stopwatch").style.fontSize = '4em';
             }
         } else {//max 5 or 7 mins
@@ -272,7 +269,7 @@
             } else if (remaining <= -30) {
                 clearInterval(r_color);
                 r_color = setInterval(random_color, 100);
-                document.getElementById("stop_sign").innerHTML = 'STOP' + '<span class="glyphicon glyphicon-ban-circle"></span>';
+                document.getElementById("stop_sign").innerHTML = 'STOP';
                 document.getElementById("stopwatch").style.fontSize = '4em';
             }
         }
