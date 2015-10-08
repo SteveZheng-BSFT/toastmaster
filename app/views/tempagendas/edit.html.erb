@@ -51,7 +51,7 @@
             <b>Timer</b><br>
             Explain timer role and request the speaker to pay attention to your timer flags: 6 min speech: green[5min], yellow[6min], red[7min], stop[7min 30sec]. Topic speech: green[1 min], yellow[1.5 min], red[2 min], stop[2min 30sec]. Elevator speech: green[2min], yellow[2.5min], red [3min], stop[3min 30sec]. Comment on the efficiency of the use of time for all parts of the meeting, rather than just the timing for those with roles – to give feedback on the time management of the whole meeting.
           </td>
-          <td><%= f.select(:timer, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
+          <td><%= f.select(:timer_m, User.all.collect {|user| [user.name]}, {include_blank: true}, class: 'form-control')  %></td>
         </tr>
         <tr>
           <td>3 minutes</td>

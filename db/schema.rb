@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150917233436) do
     t.string   "welcomer"
     t.string   "toastmaster"
     t.string   "wordmaster"
-    t.string   "timer"
+    t.string   "timer_m"
     t.string   "humorist"
     t.string   "speaker1"
     t.string   "speaker2"

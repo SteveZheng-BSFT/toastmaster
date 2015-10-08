@@ -16,10 +16,15 @@ class StaticPagesController < ApplicationController
   end
 
   def timer
+    render layout: false;
+  end
+
+  def timer_d
     render layout: false
   end
 
-  def mobile_timer
+  def timer_m
     render layout: false
   end
+
 end
